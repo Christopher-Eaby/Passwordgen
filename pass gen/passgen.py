@@ -49,6 +49,7 @@ create_table()
 #function to add data to the rolls table, it is then updated.
 def data_entry(name, surname, password): 
     #checking to see if the database contains what was entered
+    data = ''
     for row in crsr.execute('SELECT * FROM logins'):
         crsr.execute("SELECT Name FROM logins WHERE Name = ? AND Surname = ?", (name, surname))
         data = crsr.fetchall()
